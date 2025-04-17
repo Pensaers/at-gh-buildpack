@@ -10,5 +10,5 @@ LOCAL_ASSET_FILE=$(cat $ENV_DIR/LOCAL_ASSET_FILE)
 
 echo "-----> Downloading OSM Map Data from GCS Bucket"
 curl -L -o "$BUILD_DIR/$LOCAL_ASSET_FILE" "$ASSET_URL"
-echo "-----> Asset downloaded to BUILD_DIR/$LOCAL_ASSET_FILE"
+echo "-----> Asset downloaded to $BUILD_DIR/$LOCAL_ASSET_FILE"
 
