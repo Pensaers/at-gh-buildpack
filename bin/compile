@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+# Read asset URL from config vars
+ASSET_URL=$(cat $ENV_DIR/ASSET_URL)
+LOCAL_ASSET_FILE=$(cat $ENV_DIR/LOCAL_ASSET_FILE)
+
+echo "-----> Downloading OSM Map Data from GCS Bucket"
+curl -L -o "$BUILD_DIR/$LOCAL_ASSET_FILE" "$ASSET_URL"
+echo "-----> Asset downloaded to BUILD_DIR/$LOCAL_ASSET_FILE"
+
